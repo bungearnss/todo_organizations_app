@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import './index.dart';
-import '../widgets/gradient_appbar.dart';
 
 class NavigatorScreen extends StatefulWidget {
   const NavigatorScreen({Key? key}) : super(key: key);

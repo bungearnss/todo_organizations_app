@@ -102,7 +102,7 @@ class MeetingCardItem extends StatelessWidget {
                     style: Theme.of(context)
                         .textTheme
                         .headline1!
-                        .copyWith(color: Colors.black, fontSize: 15),
+                        .copyWith(color: Colors.black, fontSize: 14),
                   ),
                 ),
                 Container(
@@ -125,7 +125,7 @@ class MeetingCardItem extends StatelessWidget {
                     style: Theme.of(context)
                         .textTheme
                         .bodyText2!
-                        .copyWith(fontSize: 13),
+                        .copyWith(fontSize: 12),
                   ),
                 ),
                 Container(
@@ -173,7 +173,7 @@ class MeetingCardItem extends StatelessWidget {
                                       .headline1!
                                       .copyWith(
                                         color: Colors.blue,
-                                        fontSize: 14,
+                                        fontSize: 13,
                                       ),
                                 ),
                               ),
@@ -194,6 +194,7 @@ class MeetingCardItem extends StatelessWidget {
                                 child: Icon(
                                   Icons.calendar_month_outlined,
                                   color: Colors.grey[400],
+                                  size: 20,
                                 ),
                               ),
                               const SizedBox(width: 8),
@@ -207,14 +208,14 @@ class MeetingCardItem extends StatelessWidget {
                                         .textTheme
                                         .headline1!
                                         .copyWith(
-                                            color: Colors.black, fontSize: 14),
+                                            color: Colors.black, fontSize: 13),
                                   ),
                                   Text(
                                     time,
                                     style: Theme.of(context)
                                         .textTheme
                                         .bodyText2!
-                                        .copyWith(fontSize: 13),
+                                        .copyWith(fontSize: 12),
                                   )
                                 ],
                               )

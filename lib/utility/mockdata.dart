@@ -6,6 +6,7 @@ import '../models/meeting.dart';
 import '../models/participant.dart';
 import '../models/tasks.dart';
 import '../screens/calendar/clean_calendar_event.dart';
+import '../models/notifications.dart';
 
 timeFormatter(DateTime time) {
   final converTime = DateFormat('HH:mm').format(time);
@@ -198,3 +199,52 @@ final Map<DateTime, List<CleanCalendarEvent>> calendaEvents = {
     ),
   ],
 };
+
+/* 
+noti type
+1 = work
+2 = personal
+3 = Office
+4 = Home
+*/
+
+final List<Notifications> notiInfo = [
+  Notifications(
+    notiType: 1,
+    title: "Justin send you feedback about color and workflow",
+    subtitle: "Manage Material & Design App",
+    startTime: DateTime(
+        DateTime.now().year, DateTime.now().month, DateTime.now().day, 10, 0),
+    endTime: DateTime(
+        DateTime.now().year, DateTime.now().month, DateTime.now().day, 12, 00),
+    organizer:
+        "https://upload.wikimedia.org/wikipedia/commons/a/a0/Andrzej_Person_Kancelaria_Senatu.jpg",
+  ),
+  Notifications(
+    notiType: 2,
+    title: "Checkout your list before it's gone",
+    subtitle: "Gerneral List",
+    startTime: DateTime(
+        DateTime.now().year, DateTime.now().month, DateTime.now().day, 15, 0),
+    endTime: DateTime(
+        DateTime.now().year, DateTime.now().month, DateTime.now().day, 16, 0),
+  ),
+  Notifications(
+    notiType: 3,
+    title: "Ketty comment on youre Home Scrren and need you to discussion",
+    subtitle: "Graphics",
+    startTime: DateTime(DateTime.now().year, DateTime.now().month,
+        DateTime.now().day + 1, 13, 0),
+    endTime: DateTime(DateTime.now().year, DateTime.now().month,
+        DateTime.now().day + 1, 15, 0),
+    organizer:
+        "https://sociology.indiana.edu/about/faculty/BernicePescosolido_ER_7334_cropped.jpg",
+  ),
+  Notifications(
+    notiType: 4,
+    title: "Schedule an appointment for vaccinations at the Bangkok Hospital",
+    subtitle: "Hospital Appointment",
+    startTime: DateTime(DateTime.now().year, DateTime.now().month,
+        DateTime.now().day + 2, 9, 0),
+  ),
+];

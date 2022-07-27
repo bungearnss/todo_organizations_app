@@ -52,85 +52,88 @@ class _AllTodayTaskState extends State<AllTodayTask> {
     return Scaffold(
       appBar: appBar(context),
       body: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 15.0),
-              child: Text(
-                "Your Tasks",
-                style: Theme.of(context)
-                    .textTheme
-                    .headline1!
-                    .copyWith(color: Colors.black, fontSize: 20),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(
-                  top: 2, bottom: 8, left: 15.0, right: 15),
-              child: Text(
-                "Today you have $taskNum tasks",
-                style: const TextStyle(fontSize: 14),
-              ),
-            ),
-            Container(
-              margin: const EdgeInsets.symmetric(vertical: 15.0),
-              padding: const EdgeInsets.only(bottom: 10.0, left: 5.0),
-              width: width,
-              height: 40,
-              decoration: BoxDecoration(
-                border: Border(
-                  bottom: BorderSide(
-                    width: 0.6,
-                    color: Colors.grey[300]!,
-                  ),
+        child: Container(
+          color: Colors.white,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 15.0),
+                child: Text(
+                  "Your Tasks",
+                  style: Theme.of(context)
+                      .textTheme
+                      .headline1!
+                      .copyWith(color: Colors.black, fontSize: 20),
                 ),
               ),
-              child: renderTaskType(),
-            ),
-            SizedBox(
-              width: width,
-              height: height,
-              child: ListView.builder(
-                  itemCount: filterTask.length,
-                  itemBuilder: (context, index) {
-                    final item = filterTask[index];
-                    return Slidable(
-                      key: ValueKey(item.id),
-                      endActionPane: ActionPane(
-                        motion: const DrawerMotion(),
-                        dismissible: DismissiblePane(onDismissed: () {}),
-                        children: [
-                          SlidableAction(
-                            onPressed: null,
-                            backgroundColor: greenLight!,
-                            foregroundColor: Colors.white,
-                            icon: Icons.check,
-                          ),
-                          const SlidableAction(
-                            onPressed: null,
-                            backgroundColor: Colors.lightBlue,
-                            foregroundColor: Colors.white,
-                            icon: Icons.edit,
-                          ),
-                          const SlidableAction(
-                            onPressed: null,
-                            backgroundColor: Colors.red,
-                            foregroundColor: Colors.white,
-                            icon: Icons.delete_rounded,
-                          )
-                        ],
-                      ),
-                      child: TodayTaskListItem(
-                        taskTitle: filterTask[index].taskTitle,
-                        taskType: filterTask[index].taskType,
-                        date: filterTask[index].date,
-                        completeStatus: filterTask[index].status,
-                      ),
-                    );
-                  }),
-            ),
-          ],
+              Padding(
+                padding: const EdgeInsets.only(
+                    top: 2, bottom: 8, left: 15.0, right: 15),
+                child: Text(
+                  "Today you have $taskNum tasks",
+                  style: const TextStyle(fontSize: 14),
+                ),
+              ),
+              Container(
+                margin: const EdgeInsets.symmetric(vertical: 15.0),
+                padding: const EdgeInsets.only(bottom: 10.0, left: 5.0),
+                width: width,
+                height: 40,
+                decoration: BoxDecoration(
+                  border: Border(
+                    bottom: BorderSide(
+                      width: 0.6,
+                      color: Colors.grey[300]!,
+                    ),
+                  ),
+                ),
+                child: renderTaskType(),
+              ),
+              SizedBox(
+                width: width,
+                height: height,
+                child: ListView.builder(
+                    itemCount: filterTask.length,
+                    itemBuilder: (context, index) {
+                      final item = filterTask[index];
+                      return Slidable(
+                        key: ValueKey(item.id),
+                        endActionPane: ActionPane(
+                          motion: const DrawerMotion(),
+                          dismissible: DismissiblePane(onDismissed: () {}),
+                          children: [
+                            SlidableAction(
+                              onPressed: null,
+                              backgroundColor: greenLight!,
+                              foregroundColor: Colors.white,
+                              icon: Icons.check,
+                            ),
+                            const SlidableAction(
+                              onPressed: null,
+                              backgroundColor: Colors.lightBlue,
+                              foregroundColor: Colors.white,
+                              icon: Icons.edit,
+                            ),
+                            const SlidableAction(
+                              onPressed: null,
+                              backgroundColor: Colors.red,
+                              foregroundColor: Colors.white,
+                              icon: Icons.delete_rounded,
+                            )
+                          ],
+                        ),
+                        child: TodayTaskListItem(
+                          taskTitle: filterTask[index].taskTitle,
+                          taskType: filterTask[index].taskType,
+                          date: filterTask[index].date,
+                          completeStatus: filterTask[index].status,
+                        ),
+                      );
+                    }),
+              ),
+            ],
+          ),
         ),
       ),
     );
@@ -172,7 +175,7 @@ class _AllTodayTaskState extends State<AllTodayTask> {
   }
 
   Widget renderTaskType() {
-    List<String> taskTitle = ["All", "Learning", "Working", "Acivity"];
+    List<String> taskTitle = ["All", "Learning", "Working", "Activity"];
     return ListView.builder(
         scrollDirection: Axis.horizontal,
         itemCount: taskTitle.length,
