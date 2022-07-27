@@ -7,6 +7,7 @@ import '../models/participant.dart';
 import '../models/tasks.dart';
 import '../screens/calendar/clean_calendar_event.dart';
 import '../models/notifications.dart';
+import '../models/projects.dart';
 
 timeFormatter(DateTime time) {
   final converTime = DateFormat('HH:mm').format(time);
@@ -246,5 +247,40 @@ final List<Notifications> notiInfo = [
     subtitle: "Hospital Appointment",
     startTime: DateTime(DateTime.now().year, DateTime.now().month,
         DateTime.now().day + 2, 9, 0),
+  ),
+];
+
+final List<Projects> projInfo = [
+  Projects(
+    projType: "Mobile App",
+    projTitle: "PaoTung",
+    percent: 24.5,
+    organizer: "Abdill Murat",
+    orgImg:
+        "https://i.guim.co.uk/img/media/48cb9586d9dd5c15b1ff15873e066d2977cb4482/66_0_1916_1150/master/1916.jpg?width=1200&quality=85&auto=format&fit=max&s=a9828149a206b076be6df36a8ce2e436",
+  ),
+  Projects(
+    projType: "UX & UI Design",
+    projTitle: "Lotass's",
+    percent: 78,
+    organizer: "Abbas Luang",
+    orgImg:
+        "https://www.theportlandclinic.com/wp-content/uploads/2019/07/Person-Curtis_4x5-e1564616444404-300x300.jpg",
+  ),
+  Projects(
+    projType: "Web Development",
+    projTitle: "MuangThai",
+    percent: 65,
+    organizer: "Murad Fong",
+    orgImg:
+        "https://www.genesishealth.com/app/files/public/barclaymarty_gopeds.jpg",
+  ),
+  Projects(
+    projType: "Oracle Retail",
+    projTitle: "BangJak TTL",
+    percent: 80,
+    organizer: "Kuss Thankon",
+    orgImg:
+        "https://www.corvallisclinic.com/wp-content/uploads/Michael-Gray-DPT-COMT-2019.jpg",
   ),
 ];

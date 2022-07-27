@@ -71,13 +71,13 @@ class TaskItem extends StatelessWidget {
               Text(
                 taskTitle,
                 style: Theme.of(context).textTheme.headline1!.copyWith(
-                      fontSize: 15,
+                      fontSize: 13,
                       color: Colors.black,
                     ),
               ),
               Text(
                 status == true ? "complete" : "Incomplete",
-                style: const TextStyle(fontSize: 13),
+                style: const TextStyle(fontSize: 11),
                 textAlign: TextAlign.end,
               ),
               percent != null
@@ -88,7 +88,7 @@ class TaskItem extends StatelessWidget {
                         children: [
                           Text(
                             "${(percent! * 100).toStringAsFixed(1)}%",
-                            style: const TextStyle(fontSize: 12),
+                            style: const TextStyle(fontSize: 11),
                           ),
                           Padding(
                             padding: const EdgeInsets.only(top: 5.0),

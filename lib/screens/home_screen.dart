@@ -6,6 +6,7 @@ import '../utility/constant.dart';
 import '../widgets/home/circle_progress_item.dart';
 import '../widgets/home/meeting_card_item.dart';
 import '../widgets/home/task_item.dart';
+import '../widgets/home/project_item.dart';
 
 import 'home/all_task.dart';
 import 'home/all_meeting.dart';
@@ -40,11 +41,11 @@ class _HomeScreenState extends State<HomeScreen> {
                   style: Theme.of(context)
                       .textTheme
                       .headline1!
-                      .copyWith(fontSize: 18, color: Colors.black),
+                      .copyWith(fontSize: 14, color: Colors.black),
                 ),
                 SizedBox(
                   width: width,
-                  height: height * 0.18,
+                  height: height * 0.16,
                   child: ListView.builder(
                     shrinkWrap: true,
                     scrollDirection: Axis.horizontal,
@@ -62,44 +63,50 @@ class _HomeScreenState extends State<HomeScreen> {
                     },
                   ),
                 ),
-                Row(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      " Meeting",
-                      style: Theme.of(context)
-                          .textTheme
-                          .headline1!
-                          .copyWith(fontSize: 16, color: Colors.black),
-                    ),
-                    TextButton(
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => AllMeeting()),
-                        );
-                      },
-                      child: Row(
-                        children: [
-                          Text(
-                            "See All",
-                            style:
-                                Theme.of(context).textTheme.headline1!.copyWith(
-                                      color: Colors.blueAccent[400],
-                                      fontSize: 14,
-                                    ),
-                          ),
-                          const SizedBox(width: 2),
-                          Icon(
-                            Icons.arrow_forward_ios_outlined,
-                            color: Colors.blueAccent[400],
-                            size: 10,
-                          ),
-                        ],
+                SizedBox(
+                  height: 40,
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        " Meeting",
+                        style: Theme.of(context)
+                            .textTheme
+                            .headline1!
+                            .copyWith(fontSize: 14, color: Colors.black),
                       ),
-                    ),
-                  ],
+                      TextButton(
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => AllMeeting()),
+                          );
+                        },
+                        child: Row(
+                          children: [
+                            Text(
+                              "See All",
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .headline1!
+                                  .copyWith(
+                                    color: Colors.blueAccent[400],
+                                    fontSize: 12,
+                                  ),
+                            ),
+                            const SizedBox(width: 2),
+                            Icon(
+                              Icons.arrow_forward_ios_outlined,
+                              color: Colors.blueAccent[400],
+                              size: 10,
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
                 SizedBox(
                   width: width,
@@ -124,46 +131,51 @@ class _HomeScreenState extends State<HomeScreen> {
                     },
                   ),
                 ),
-                const SizedBox(height: 15),
-                Row(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      " Today's Tasks",
-                      style: Theme.of(context)
-                          .textTheme
-                          .headline1!
-                          .copyWith(fontSize: 16, color: Colors.black),
-                    ),
-                    TextButton(
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => AllTodayTask()),
-                        );
-                      },
-                      child: Row(
-                        children: [
-                          Text(
-                            "See All",
-                            style:
-                                Theme.of(context).textTheme.headline1!.copyWith(
-                                      color: Colors.blueAccent[400],
-                                      fontSize: 14,
-                                    ),
-                          ),
-                          const SizedBox(width: 2),
-                          Icon(
-                            Icons.arrow_forward_ios_outlined,
-                            color: Colors.blueAccent[400],
-                            size: 10,
-                          ),
-                        ],
+                Container(
+                  padding: const EdgeInsets.only(top: 10),
+                  height: 50,
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        " Today's Tasks",
+                        style: Theme.of(context)
+                            .textTheme
+                            .headline1!
+                            .copyWith(fontSize: 14, color: Colors.black),
                       ),
-                    ),
-                  ],
+                      TextButton(
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => AllTodayTask()),
+                          );
+                        },
+                        child: Row(
+                          children: [
+                            Text(
+                              "See All",
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .headline1!
+                                  .copyWith(
+                                    color: Colors.blueAccent[400],
+                                    fontSize: 12,
+                                  ),
+                            ),
+                            const SizedBox(width: 2),
+                            Icon(
+                              Icons.arrow_forward_ios_outlined,
+                              color: Colors.blueAccent[400],
+                              size: 10,
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
                 SizedBox(
                   width: width,
@@ -178,6 +190,71 @@ class _HomeScreenState extends State<HomeScreen> {
                         taskType: myTasks[index].taskType,
                         percent: myTasks[index].percent,
                         status: myTasks[index].status,
+                      );
+                    },
+                  ),
+                ),
+                Container(
+                  padding: const EdgeInsets.only(top: 10),
+                  height: 50,
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        " New Projects",
+                        style: Theme.of(context)
+                            .textTheme
+                            .headline1!
+                            .copyWith(fontSize: 14, color: Colors.black),
+                      ),
+                      TextButton(
+                        onPressed: () {
+                          /* Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => AllTodayTask()),
+                          ); */
+                        },
+                        child: Row(
+                          children: [
+                            Text(
+                              "See All",
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .headline1!
+                                  .copyWith(
+                                    color: Colors.blueAccent[400],
+                                    fontSize: 12,
+                                  ),
+                            ),
+                            const SizedBox(width: 2),
+                            Icon(
+                              Icons.arrow_forward_ios_outlined,
+                              color: Colors.blueAccent[400],
+                              size: 10,
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                SizedBox(
+                  // width: width,
+                  height: height * 0.17,
+                  child: ListView.builder(
+                    shrinkWrap: true,
+                    scrollDirection: Axis.horizontal,
+                    itemCount: 4,
+                    itemBuilder: (ctx, index) {
+                      final projItem = projInfo[index];
+                      return ProjectItem(
+                        projType: projItem.projType,
+                        projTitle: projItem.projTitle,
+                        percent: projItem.percent,
+                        organizer: projItem.organizer,
+                        orgImg: projItem.orgImg,
                       );
                     },
                   ),
