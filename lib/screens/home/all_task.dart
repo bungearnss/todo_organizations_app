@@ -143,7 +143,7 @@ class _AllTodayTaskState extends State<AllTodayTask> {
     return PreferredSize(
       preferredSize: const Size.fromHeight(50.0),
       child: AppBar(
-        backgroundColor: Colors.transparent,
+        backgroundColor: Colors.white,
         elevation: 0,
         leading: Align(
           alignment: Alignment.centerLeft,

@@ -12,6 +12,9 @@ import 'home/all_task.dart';
 import 'home/all_meeting.dart';
 
 import '../screens/notifications_screen.dart';
+import 'home/all_project.dart';
+
+import '../components/badge.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -210,11 +213,11 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                       TextButton(
                         onPressed: () {
-                          /* Navigator.push(
+                          Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => AllTodayTask()),
-                          ); */
+                                builder: (context) => AllProject()),
+                          );
                         },
                         child: Row(
                           children: [
@@ -250,11 +253,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     itemBuilder: (ctx, index) {
                       final projItem = projInfo[index];
                       return ProjectItem(
-                        projType: projItem.projType,
-                        projTitle: projItem.projTitle,
-                        percent: projItem.percent,
-                        organizer: projItem.organizer,
-                        orgImg: projItem.orgImg,
+                        projectInfo: projItem,
                       );
                     },
                   ),
@@ -284,9 +283,11 @@ class _HomeScreenState extends State<HomeScreen> {
           Padding(
             padding: const EdgeInsets.only(right: 5),
             child: GestureDetector(
-              child: const Icon(
-                Icons.notifications_none,
-                color: Colors.white,
+              child: Badge(
+                child: const Icon(
+                  Icons.notifications_none,
+                  color: Colors.white,
+                ),
               ),
               onTap: () {
                 Navigator.push(

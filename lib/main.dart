@@ -30,6 +30,7 @@ class MyApp extends StatelessWidget {
           ),
         ),
         accentColor: const Color.fromRGBO(120, 105, 250, 1),
+        dividerColor: Colors.transparent,
       ),
       home: const NavigatorScreen(),
     );
